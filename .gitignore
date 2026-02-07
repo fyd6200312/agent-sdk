@@ -44,6 +44,9 @@ uv.lock
 .pytest_cache/
 htmlcov/
 
+# Node
+node_modules/
+
 # Type checking
 .mypy_cache/
 .dmypy.json

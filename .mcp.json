@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "trader-quant": {
+      "command": "/Users/fangyudong/PycharmProjects/claude-agent-sdk-python/.venv/bin/python",
+      "args": ["mcp_servers/trader_quant.py"]
+    }
+  }
+}

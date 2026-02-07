@@ -1,27 +1,47 @@
-# Workflow
+# 用户全局配置
 
-```bash
-# Lint and style
-# Check for issues and fix automatically
-python -m ruff check src/ tests/ --fix
-python -m ruff format src/ tests/
+-   Git 提交者名称：fyd
 
-# Typecheck (only done for src/)
-python -m mypy src/
+# 项目文档管理规则
 
-# Run all tests
-python -m pytest tests/
+## 文档结构要求
 
-# Run specific test file
-python -m pytest tests/test_client.py
-```
+-   每个项目必须包含以下文档：
+    -   CLAUDE.md：项目概览、快速开始、功能列表
+    -   TODO.md：开发进度和待办事项（使用任务列表格式）
+    -   docs/：详细文档目录（根据需要创建）
 
-# Codebase Structure
+## 开发流程规则
 
-- `src/claude_agent_sdk/` - Main package
-  - `client.py` - ClaudeSDKClient for interactive sessions
-  - `query.py` - One-shot query function
-  - `types.py` - Type definitions
-  - `_internal/` - Internal implementation details
-    - `transport/subprocess_cli.py` - CLI subprocess management
-    - `message_parser.py` - Message parsing logic
+1.  **功能开发时**：
+    
+    -   实现新功能后，立即在 TODO.md 中对应任务打勾 ✓
+    -   如果是重要功能，同时更新 README.md 的功能列表
+    -   如果涉及 API 变更，更新相应的文档
+2.  **代码提交时**：
+    
+    -   每次 git commit 必须包含代码和文档的同步更新
+    -   commit message 如果包含文档更新，需注明
+3.  **任务管理**：
+    
+    -   开始任务前，在 TODO.md 中添加任务项
+    -   完成任务后，立即标记为 [x]
+    -   使用分层任务列表组织复杂功能
+
+## 文档格式规范
+
+-   使用 GitHub 风格的 Markdown
+-   任务列表格式：`- [ ]` 未完成，`- [x]` 已完成
+-   进度分组：按功能模块或开发阶段分组
+
+## 自动化要求
+
+-   创建新功能时，主动询问是否需要更新文档
+-   完成任务后，主动更新对应的文档和进度
+-   如果发现文档过时，主动提示更新
+-   使用中文回答
+-   项目更新时自动更新CLAUDE.md
+-   没有直接要求的情况下不要新生成文档
+-   没有要求你测试的情况下禁止自己直接测试
+-   没有直接要求的情况下禁止写文档
+-   如果有新的用户没提供的方案一定要向用户确认后在修改!!!

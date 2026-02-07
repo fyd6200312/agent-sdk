@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-50 text-gray-900;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400;
+}
+
+/* Code blocks */
+pre {
+  @apply bg-gray-800 text-gray-100 p-3 rounded-lg overflow-x-auto text-sm;
+}
+
+code {
+  @apply bg-gray-200 px-1 py-0.5 rounded text-sm;
+}
+
+pre code {
+  @apply bg-transparent p-0;
+}

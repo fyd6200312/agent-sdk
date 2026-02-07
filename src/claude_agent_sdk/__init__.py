@@ -15,6 +15,19 @@ from ._errors import (
 )
 from ._internal.transport import Transport
 from ._version import __version__
+
+# Agent abstraction layer
+from .agent import (
+    Agent,
+    AgentError,
+    AgentResult,
+    AgentSession,
+    PermissionDenied,
+    PermissionDeniedError,
+    SessionError,
+    StreamMessage,
+    ToolError,
+)
 from .client import ClaudeSDKClient
 from .query import query
 from .types import (
@@ -365,7 +378,7 @@ __all__ = [
     "PermissionRequestHookSpecificOutput",
     "HookJSONOutput",
     "HookMatcher",
-    # Agent support
+    # Agent definition (for custom subagents)
     "AgentDefinition",
     "SettingSource",
     # Plugin support
@@ -381,6 +394,16 @@ __all__ = [
     "tool",
     "SdkMcpTool",
     "ToolAnnotations",
+    # Agent abstraction layer
+    "Agent",
+    "AgentResult",
+    "AgentSession",
+    "StreamMessage",
+    "AgentError",
+    "PermissionDenied",
+    "PermissionDeniedError",
+    "SessionError",
+    "ToolError",
     # Errors
     "ClaudeSDKError",
     "CLIConnectionError",

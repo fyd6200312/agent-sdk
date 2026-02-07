@@ -710,7 +710,7 @@ class ClaudeAgentOptions:
     max_turns: int | None = None
     max_budget_usd: float | None = None
     disallowed_tools: list[str] = field(default_factory=list)
-    model: str | None = None
+    model: str | None = "claude-opus-4-5-20251101"
     fallback_model: str | None = None
     # Beta features - see https://docs.anthropic.com/en/api/beta-headers
     betas: list[SdkBeta] = field(default_factory=list)
